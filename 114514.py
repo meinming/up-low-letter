@@ -56,6 +56,7 @@ def OpenFiles(path):
         code = f.read()
     return code
 
+
 def P_text(word=''):
     """
     P_text: 打印一个带logo的提示语
@@ -78,32 +79,32 @@ def Target(text):
      if嵌套 验空==>判断参数
      (if嵌套不是好方法，小孩不要学 逃)
     """
-    print(text)
+    # print(text)
     if text:
         if text[0] == '-h':
             P_text(PRINT_HELP)
 
         elif text[0] == '-t':
-            print("-t")
+            # print("-t")
             res = func(text[1])
             P_text()
             print(f"return: {res}")
 
-            ###
+
         elif text[0] == '-f':
-            print("-f")
+            # print("-f")
             P_text("Reading files....")
             files = OpenFiles(text[1])
             res = func(files)
             P_text()
             print(f"return: {res}")
-            ###
+
 
         else:
             print(f'Invalid keyword: {text}, Maybe you can try "-h" to get help.')
 
     else:
-        print("他是空的")
+        # print("他是空的")
         P_text(PRINT_HELP)
         return 0
 
@@ -114,7 +115,7 @@ def main():
     This isn't a main funication
     """
     target = sys.argv[1:] #传入参数
-    print(f"main:{target}")
+    # print(f"main:{target}")
     Target(target)
 
 
